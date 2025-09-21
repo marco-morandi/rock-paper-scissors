@@ -14,10 +14,12 @@ function getComputerChoice() {
     }
 }
 
+// function to get user input
 function getHumanChoice() {
     let human_choice = prompt("Enter rock, paper or scissors");
     return human_choice;
 }
 
-let human_choice = getHumanChoice();
-console.log(human_choice);
+// variables to keep track of the score
+let humanScore = 0;
+let computerScore = 0;
