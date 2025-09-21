@@ -65,8 +65,34 @@ function playRound(humanChoice, computerChoice) {
     return;
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+// function that simulates a full game
+function playGame(numberOfGames) {
+    let i = 0;
 
-playRound(humanChoice, computerChoice);
+    let humanChoice = "";
+    let computerChoice = "";
 
+    while (i < numberOfGames) {
+       humanChoice = getHumanChoice();
+       computerChoice = getComputerChoice();
+
+       playRound(humanChoice, computerChoice);
+
+       console.log(`# CURRENT SCORE #\n YOU: ${humanScore} COMPUTER: ${computerScore}`);
+        
+       i++;
+    }
+
+    if(humanScore > computerScore) {
+        console.log("Congratulations, you won!");
+    } else {
+        console.log("Can't you even win against a random playing computer?");
+    }
+}
+
+let numberOfGames = prompt("How many game do you want to play? ");
+// check input validation with default value
+if (isNaN(numberOfGames) || numberOfGames <= 0) {
+    numberOfGames = 5;
+}
+playGame(numberOfGames);
