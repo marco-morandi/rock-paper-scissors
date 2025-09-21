@@ -7,15 +7,17 @@ function getComputerChoice() {
     switch(random_choice) {
         case 0: 
             return "rock";
-            break;
         case 1: 
             return "paper";
-            break;
         case 2: 
             return "scissors";
-            break;
     }
 }
 
-let computer_choice = getComputerChoice();
-console.log(computer_choice);
+function getHumanChoice() {
+    let human_choice = prompt("Enter rock, paper or scissors");
+    return human_choice;
+}
+
+let human_choice = getHumanChoice();
+console.log(human_choice);
